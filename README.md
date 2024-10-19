@@ -10,6 +10,14 @@ This is A Pytorch implementation of MoveNet from Google. Include training code a
 
 Google just release pre-train models(tfjs or tflite), which cannot be converted to some CPU inference framework such as NCNN,Tengine,MNN,TNN, and we can not add our own custom data to finetune, so there is this repo.
 
+---
+
+## Changes in this Fork
+
+- **Modified** `pth2onnx.py`: Modified for CPU.
+- **Added** `npy2bin.py`: A new file for converting the center weight file from "npy" to "bin" format.
+
+---
 
 ## How To Run
 
