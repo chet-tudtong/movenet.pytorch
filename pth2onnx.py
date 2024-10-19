@@ -27,14 +27,15 @@ def main(cfg):
 
 
     run_task = Task(cfg, model)
-    run_task.modelLoad('output/test/e100_valacc0.98349.pth')
+    # run_task.modelLoad('output/test/e100_valacc0.98349.pth')
+    run_task.modelLoad('output/e118_valacc0.79805.pth')
 
 
     run_task.model.eval()
-    run_task.model.to("cuda")
+    run_task.model.to("cpu")
 
     #data type nchw
-    dummy_input1 = torch.randn(1, 3, 192, 192).to("cuda")
+    dummy_input1 = torch.randn(1, 3, 192, 192).to("cpu")
     input_names = [ "input1"] #自己命名
     output_names = [ "output1","output2","output3","output4" ]
     # torch.onnx.export(model, (dummy_input1, dummy_input2, dummy_input3), "C3AE.onnx", verbose=True, input_names=input_names, output_names=output_names)
